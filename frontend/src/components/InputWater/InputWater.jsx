@@ -6,15 +6,15 @@ import {useState} from "react";
 function InputWater(props) {
     const capacities = [
         {
-            value: 20,
+            value: 200,
             symbol: "water_loss",
         },
         {
-            value: 30,
+            value: 300,
             symbol: "water_medium",
         },
         {
-            value: 50,
+            value: 500,
             symbol: "water_full",
         }
     ];
@@ -28,7 +28,7 @@ function InputWater(props) {
         <div className={styles.panel}>
             <div className={styles.buttons}>
                 {capacities.map((capacity) => (
-                    <div className={styles.capacity}>
+                    <div className={styles.capacity} onClick={()=> props.onAdd(capacity.value)}>
                         <span className={"material-symbols-rounded"}>
                             {capacity.symbol}
                         </span>
