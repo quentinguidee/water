@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import styles from "./InputWater.module.sass";
+import {useState} from "react";
 
 function InputWater(props) {
     const capacities = [
@@ -18,6 +19,10 @@ function InputWater(props) {
         }
     ];
 
+    const[boxValue,setBoxValue] = useState(0)
+    const onChange = (event) => {
+        setBoxValue(Number.parseInt(event.target.value));
+    }
     return (
 
         <div className={styles.panel}>
@@ -34,8 +39,8 @@ function InputWater(props) {
 
             <div>or</div>
             <div className={styles.wrapper}>
-                <input className={styles.input} type="number" placeholder="0" onChange={props.onChange}/>
-                <button className={styles.button}>
+                <input className={styles.input} type="number" placeholder="0" onChange={onChange}/>
+                <button className={styles.button} onClick={()=> props.onAdd(boxValue)}>
                     <span className="material-symbols-rounded">add</span>
                 </button>
             </div>

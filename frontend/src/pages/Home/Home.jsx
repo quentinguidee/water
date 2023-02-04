@@ -7,8 +7,8 @@ import {useState} from "react";
 
 function Home() {
     const[waterLevel,setWaterLevel] = useState(0)
-    const onChange = (event) => {
-        setWaterLevel(Number.parseInt(event.target.value))
+    const onAdd = (value) => {
+        setWaterLevel(previous => previous + Number.parseInt(value));
     }
     return (
         <div className={styles.home}>
@@ -16,7 +16,7 @@ function Home() {
                 <ConsumptionVisualizer waterLevel={waterLevel}/>
             </div>
             <div className={styles.right}>
-                <InputWater onChange={onChange}/>
+                <InputWater onAdd={onAdd}/>
             </div>
         </div>
     );

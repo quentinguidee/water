@@ -10,7 +10,9 @@ function ConsumptionVisualizer(props) {
     }, [props.waterLevel])
     return (
         <div className={styles.container}>
-            <Wave className={styles.wave}
+            <Wave
+                style={{bottom: `calc(${props.waterLevel / 1000 * 100}% - 3px)`}}
+                className={styles.wave}
                   fill='#1277b0'
                   paused={false}
                   options={{
@@ -22,7 +24,7 @@ function ConsumptionVisualizer(props) {
                   }
 
             />
-            <div className={styles.visualizer}/>
+            <div style={{height: `${props.waterLevel / 1000 * 100}%`}} className={styles.visualizer}/>
         </div>
 
     );
