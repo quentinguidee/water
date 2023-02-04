@@ -2,7 +2,7 @@ import * as React from "react";
 
 import styles from "./InputWater.module.sass";
 
-function InputWater() {
+function InputWater(props) {
     const capacities = [
         {
             value: 20,
@@ -19,6 +19,7 @@ function InputWater() {
     ];
 
     return (
+
         <div className={styles.panel}>
             <div className={styles.buttons}>
                 {capacities.map((capacity) => (
@@ -32,9 +33,8 @@ function InputWater() {
             </div>
 
             <div>or</div>
-
             <div className={styles.wrapper}>
-                <input className={styles.input} type="number" placeholder="0"/>
+                <input className={styles.input} type="number" placeholder="0" onChange={props.onChange}/>
                 <button className={styles.button}>
                     <span className="material-symbols-rounded">add</span>
                 </button>
