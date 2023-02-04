@@ -1,5 +1,8 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Home from "./pages/Home";
+
+import "./Reset.css";
+import "./App.sass";
+import Home from "./pages/Home/Home";
 
 function App() {
     return (
