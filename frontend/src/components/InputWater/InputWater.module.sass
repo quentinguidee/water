@@ -1,20 +1,26 @@
 @import '../../styles/colors'
 
+.panel
+    display: flex
+    flex-direction: column
+    gap: 20px
+    align-items: center
+
 .wrapper
     display: flex
     flex-direction: row
     gap: 8px
 
 .input
-    padding: 16px 20px
+    padding: 12px 20px
     border-radius: 12px
     border: 3px solid rgba(0, 0, 0, 0.1)
-    font-size: 18px
+    font-size: 17px
     font-family: "Rubik", sans-serif
     appearance: none
     -webkit-appearance: none
     -moz-appearance: none
-    background-color: rgba(255, 255, 255, 0.8)
+    background-color: $secondary-background
 
     &:focus
         outline: none
@@ -25,11 +31,40 @@ input[type=number]
 
 .button
     padding: 19px 23px
-    background-color: rgba(0, 0, 0, 0.1)
+    background-color: $secondary-background
     outline: none
     border-radius: 12px
     border: none
     cursor: pointer
 
     &:hover
-        background-color: $secondary-background
+        background-color: $hover-background
+
+.glass
+    color: $water
+    font-size: 40px
+
+.glasses
+    margin-top: 20px
+    display: flex
+    flex-direction: row
+    gap: 8px
+    align-items: center
+
+.buttons
+    display: flex
+    flex-direction: row
+    gap: 8px
+
+.capacity
+    display: flex
+    flex-direction: row
+    align-items: center
+    gap: 8px
+    border-radius: 12px
+    padding: 16px
+    background-color: $secondary-background
+    cursor: pointer
+
+    &:hover
+        background-color: $hover-background
