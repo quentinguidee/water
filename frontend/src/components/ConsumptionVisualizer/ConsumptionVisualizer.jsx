@@ -3,7 +3,7 @@ import Wave from "react-wavify"
 import styles from "./ConsumptionVisualizer.module.sass";
 import {useEffect, useState, Fragment} from "react";
 
-
+export const CONSUMPTION_GOAL = 3300;
 function ConsumptionVisualizer(props) {
 
     useEffect(()=>{
@@ -13,7 +13,7 @@ function ConsumptionVisualizer(props) {
     return (
         <div className={styles.container}>
             <Wave
-                style={{bottom: `calc(${props.waterLevel / 1000 * 100}% + 6px)`}}
+                style={{bottom: `calc(${props.waterLevel / CONSUMPTION_GOAL * 100}% + 6px)`}}
                 className={styles.wave}
                 fill='#106fa4'
                 paused={false}
@@ -28,7 +28,7 @@ function ConsumptionVisualizer(props) {
             />
 
             <img
-                style={{bottom: `calc(${props.waterLevel / 1000 * 100}% + 12%)`}}
+                style={{bottom: `calc(${props.waterLevel / CONSUMPTION_GOAL * 100}% + 12%)`}}
                 width={20}
                 height={20}
                 className={styles.duck}
@@ -36,7 +36,7 @@ function ConsumptionVisualizer(props) {
             />
 
             <Wave
-                style={{bottom: `calc(${props.waterLevel / 1000 * 100}% - 3px)`}}
+                style={{bottom: `calc(${props.waterLevel / CONSUMPTION_GOAL * 100}% - 3px)`}}
                 className={styles.wave}
                   fill='#1277b0'
                   paused={false}
@@ -50,7 +50,7 @@ function ConsumptionVisualizer(props) {
 
             />
 
-            <div style={{height: `${props.waterLevel / 1000 * 100}%`}} className={styles.visualizer}/>
+            <div style={{height: `${props.waterLevel / CONSUMPTION_GOAL * 100}%`}} className={styles.visualizer}/>
 
 
         </div>

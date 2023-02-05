@@ -4,6 +4,7 @@ import styles from "./InputWater.module.sass";
 import {useState} from "react";
 
 function InputWater(props) {
+
     const capacities = [
         {
             value: 200,
@@ -23,6 +24,14 @@ function InputWater(props) {
     const onChange = (event) => {
         setBoxValue(Number.parseInt(event.target.value));
     }
+
+    const checkKeyPress = (event) => {
+        if (event.key === 'Enter'){
+            props.onAdd(boxValue);
+            setBoxValue('');
+        }
+    }
+
     return (
 
         <div className={styles.panel}>
@@ -39,8 +48,20 @@ function InputWater(props) {
 
             <div>or</div>
             <div className={styles.wrapper}>
-                <input className={styles.input} type="number" placeholder="0" onChange={onChange}/>
-                <button className={styles.button} onClick={()=> props.onAdd(boxValue)}>
+                <input className={styles.input}
+                       type="number" placeholder="0"
+                       min={0}
+                       step={10}
+                       max={2000}
+                       onKeyDown={checkKeyPress}
+                       onChange={onChange}
+                        value={boxValue}
+                />
+                <button className={styles.button} onClick={()=> {
+                    props.onAdd(boxValue);
+                    setBoxValue('');
+                }
+                }>
                     <span className="material-symbols-rounded">add</span>
                 </button>
             </div>
