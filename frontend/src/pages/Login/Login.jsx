@@ -1,8 +1,9 @@
-import styles from "../Home/Home.module.sass";
+import styles from "../Login/Login.module.sass";
 import * as React from "react";
 import {signInWithPopup, GoogleAuthProvider} from "firebase/auth";
 import {auth} from "../../firebase"
 import {useNavigate} from "react-router";
+import logo from "./logo.png";
 
 function Login() {
     const navigate = useNavigate()
@@ -16,10 +17,13 @@ function Login() {
     }
 
     return (
-        <div className={styles.login}>
+        <div className={styles.container}>
             <button className={styles.button} onClick={login}>
                 Login
             </button>
+            <center>
+                <img className={styles.logo} src={logo} alt="Logo" />
+            </center>
         </div>
     );
 }

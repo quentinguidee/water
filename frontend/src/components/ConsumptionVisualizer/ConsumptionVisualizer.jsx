@@ -7,7 +7,6 @@ export const CONSUMPTION_GOAL = 3300;
 function ConsumptionVisualizer(props) {
 
     useEffect(()=>{
-        console.log(props.waterLevel);
     }, [props.waterLevel])
 
     return (
