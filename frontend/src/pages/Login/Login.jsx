@@ -21,9 +21,9 @@ function Login() {
             <button className={styles.button} onClick={login}>
                 Login
             </button>
-            <center>
+            <div className={styles.logoWrapper}>
                 <img className={styles.logo} src={logo} alt="Logo" />
-            </center>
+            </div>
         </div>
     );
 }
