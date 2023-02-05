@@ -17,6 +17,25 @@
     //bottom: calc(80% - 3px)
     position: absolute
 
+.duck
+    position: absolute
+    animation: duck-animation 6s ease-in-out infinite
+
+@keyframes duck-animation
+    0%
+        left: 5%
+        transform: scaleX(1)
+    1%
+        transform: scaleX(-1)
+    50%
+        left: 85%
+        transform: scaleX(-1)
+    51%
+        transform: scaleX(1)
+    100%
+        left: 5%
+        transform: scaleX(1)
+
 .container
     width: 100%
     height: 100%
