@@ -28,7 +28,7 @@ function ConsumptionVisualizer(props) {
             />
 
             <img
-                style={{bottom: `calc(${props.waterLevel / CONSUMPTION_GOAL * 100}% + 12%)`}}
+                style={{bottom: `calc(${props.waterLevel / CONSUMPTION_GOAL * 100}% + 65px)`}}
                 width={20}
                 height={20}
                 className={styles.duck}
